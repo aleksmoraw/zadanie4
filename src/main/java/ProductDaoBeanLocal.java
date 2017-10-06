@@ -1,6 +1,4 @@
 import javax.ejb.Local;
-import java.util.Date;
-import java.util.List;
 
 @Local
 public interface ProductDaoBeanLocal {

@@ -2,11 +2,6 @@ import javax.enterprise.inject.Model;
 import javax.inject.Named;
 import javax.persistence.*;
 
-//@NamedQueries({
-//        @NamedQuery(query = "SELECT m FROM Meeting m", name = "com.infoshareacademy.entities.Meeting.findAll"),
-//        @NamedQuery(query = "SELECT m FROM Meeting m WHERE m.meetingTime >= :afterDate", name = "com.infoshareacademy.entities.Meeting.findAllAfterDate")
-//})
-
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
