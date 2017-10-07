@@ -17,6 +17,7 @@
         <setting name="provider-name" value="" />
         <datasource-mapping>
           <factory-entry name="conferencesUnit" value="ab6d107e-abbd-460b-8479-1fcbc501ae80" />
+          <factory-entry name="cwiczenie4" value="ab6d107e-abbd-460b-8479-1fcbc501ae80" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>

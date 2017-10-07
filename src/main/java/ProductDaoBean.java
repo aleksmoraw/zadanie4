@@ -1,6 +1,6 @@
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.*;
+import java.util.List;
 
 @Stateless
 public class ProductDaoBean implements ProductDaoBeanLocal {
@@ -21,6 +21,12 @@ public class ProductDaoBean implements ProductDaoBeanLocal {
         if (product != null) {
             em.remove(product);
         }
+    }
+
+    public List<Product> getAll() {
+        String jpql = "SELECT p FROM Product p";
+        TypedQuery query = em.createQuery(jpql, String.class);
+        return query.getResultList();
     }
 
 }

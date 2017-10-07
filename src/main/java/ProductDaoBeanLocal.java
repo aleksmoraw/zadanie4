@@ -1,4 +1,5 @@
 import javax.ejb.Local;
+import java.util.List;
 
 @Local
 public interface ProductDaoBeanLocal {
@@ -9,4 +10,5 @@ public interface ProductDaoBeanLocal {
 
     void updateProduct(Product product);
 
+    List<Product> getAll();
 }
