@@ -2,6 +2,10 @@ import javax.enterprise.inject.Model;
 import javax.inject.Named;
 import javax.persistence.*;
 
+@NamedQueries({
+        @NamedQuery(query = "SELECT p FROM Product p", name = "Product.findAll")
+})
+
 @Entity
 @Table(name = "PRODUCT")
 public class Product {

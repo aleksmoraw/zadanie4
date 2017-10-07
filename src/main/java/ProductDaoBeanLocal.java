@@ -11,4 +11,5 @@ public interface ProductDaoBeanLocal {
     void updateProduct(Product product);
 
     List<Product> getAll();
+
 }

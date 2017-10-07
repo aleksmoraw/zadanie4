@@ -1,9 +1,11 @@
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import java.util.List;
 
 @Stateless
 public class ProductDaoBean implements ProductDaoBeanLocal {
+
 
     @PersistenceContext(name = "cwiczenie4")
     EntityManager em;
@@ -24,9 +26,15 @@ public class ProductDaoBean implements ProductDaoBeanLocal {
     }
 
     public List<Product> getAll() {
-        String jpql = "SELECT p FROM Product p";
-        TypedQuery query = em.createQuery(jpql, String.class);
-        return query.getResultList();
+        Query q = em.createNamedQuery("Product.findAll");
+        return q.getResultList();
+
+
+
     }
 
+
+
 }
+
+

@@ -13,25 +13,24 @@ public class AddProductServlet extends HttpServlet {
 
     @Inject
     ProductDaoBeanLocal productDao;
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            RequestDispatcher dispatcher = getServletContext()
-                    .getRequestDispatcher("/WEB-INF/AddProduct.jsp");
-            dispatcher.forward(req, resp);
-    }
+//
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//            RequestDispatcher dispatcher = getServletContext()
+//                    .getRequestDispatcher("/WEB-INF/AddProduct.jsp");
+//            dispatcher.forward(req, resp);
+//    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String name = request.getParameter("productName");
+        String count = request.getParameter("productCount").toString();
         Product product = new Product();
-        String productName = getServletContext().getAttribute("productName").toString();
-        getServletContext().setAttribute("productName", productName);
-        String productCount = getServletContext().getAttribute("productCount").toString();
-        getServletContext().setAttribute("productCount", productCount);
-        product.setProductName(productName);
-        product.setProductCount(Integer.valueOf(productCount));
-
+        product.setProductName(name);
+        product.setProductCount(Integer.valueOf(count));
         productDao.addProduct(product);
+        response.sendRedirect(request.getContextPath());
+
     }
 }
